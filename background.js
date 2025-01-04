@@ -3,7 +3,7 @@ let injectedTabSearch = new Map();
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   const allowInjection =
     changeInfo.url && // Ensure it's a URL change
-    new URL(changeInfo.url).hostname.includes("google.co") && // Ensure the changed url is of google
+    new URL(changeInfo.url).hostname.includes("www.google.co") && // Ensure the changed url is of google
     (!injectedTabSearch.has(tabId) ||
       getSearchQuery(new URL(changeInfo.url)) !== injectedTabSearch.get(tabId)); // Ensure that either it's a new tab or change in search for the same tab
 

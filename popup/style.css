@@ -1,3 +1,35 @@
-h1 {
-  color: brown;
+.content {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imgTitle {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: cursive;
+}
+
+.info {
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchBtn {
+  color: cadetblue;
 }
