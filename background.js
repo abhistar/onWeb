@@ -1,7 +1,6 @@
 let injectedTabs = new Set();
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  console.log(injectedTabs);
   const allowInjection =
     !injectedTabs.has(tabId) &&
     changeInfo.url && // Ensure it's a URL change
