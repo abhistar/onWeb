@@ -208,6 +208,10 @@
     "*://*.google.co.zm/*",
     "*://*.google.co.zw/*"
   ],
+  "action": {
+    "default_popup": "/popup/popup.html",
+    "default_icon": "/images/onWeb128.png"
+  },
   "icons": {
     "16": "/images/onWeb16.png",
     "32": "/images/onWeb32.png",
