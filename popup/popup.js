@@ -3,10 +3,10 @@ function getCurrentTabUrl() {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs.length > 0) {
       const currentTab = tabs[0];
-      const currentTabUrl = currentTab.url; // Get the URL of the current tab
-      const isSearchPage = new URL(currentTabUrl).hostname.includes(
-        "www.google.co"
-      );
+      const currentTabUrl = new URL(currentTab.url); // Get the URL of the current tab
+      const isSearchPage =
+        currentTabUrl.hostname.includes(".google.") &&
+        currentTabUrl.pathname === "/search";
 
       // Display the URL in your popup (optional)
       const urlElement = document.getElementById("info-text");
