@@ -13,8 +13,9 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     const searchQuery = isGoogleSearch ? getSearchQuery(url) : null;
 
     const isNewSearch =
-      !injectedTabSearch.has(tabId) ||
-      searchQuery !== injectedTabSearch.get(tabId); // Ensure that either it's a new tab or change in search for the same tab
+      searchQuery !== null &&
+      (!injectedTabSearch.has(tabId) ||
+        searchQuery !== injectedTabSearch.get(tabId)); // Ensure that either it's a new tab or change in search for the same tab
 
     if (isNewSearch) {
       chrome.scripting.executeScript(
